@@ -35,6 +35,16 @@ data "aws_iam_policy_document" "assume_role" {
       type        = "Federated"
     }
   }
+    
+  //TODO refactor  
+  statement {
+    actions = ["sts:AssumeRole"]
+    effect  = "Allow"
+    principals {
+      identifiers = ["arn:aws:iam::853310098537:user/frankbernhardt"]
+      type        = "AWS"
+    }
+  }
 
   version = "2012-10-17"
 }
